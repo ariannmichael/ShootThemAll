@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee792e649d36f4e5e9949342fc4db9fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 8901913146137169064, guid: eec1cc2ff506946b4a340f4e6c2236f5, type: 3}
+  enemyPrefab: {fileID: 8901913146137169064, guid: 9f464404249814645b731d9981d778d4, type: 3}
 --- !u!4 &246446913
 Transform:
   m_ObjectHideFlags: 0
@@ -391,14 +391,6 @@ PrefabInstance:
     - target: {fileID: 4642828115968055847, guid: 10596739633624690ad9f866a8a35c57, type: 3}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4642828115968055847, guid: 10596739633624690ad9f866a8a35c57, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.6023799
-      objectReference: {fileID: 0}
-    - target: {fileID: 4642828115968055847, guid: 10596739633624690ad9f866a8a35c57, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.6721898
       objectReference: {fileID: 0}
     - target: {fileID: 4642828115968055847, guid: 10596739633624690ad9f866a8a35c57, type: 3}
       propertyPath: m_LocalPosition.x

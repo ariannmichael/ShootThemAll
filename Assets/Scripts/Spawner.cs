@@ -26,7 +26,7 @@ public class Spawner : MonoBehaviour
             Vector2 minPosition = Camera.main.ViewportToWorldPoint(Vector2.zero); // (0,0)
 
             float positionY = Random.Range(minPosition.y, maxPosition.y);
-            Vector2 spawnPosition = new Vector2(maxPosition.x, positionY);
+            Vector2 spawnPosition = new Vector2(maxPosition.x + 0.5f, positionY);
 
             Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
         }

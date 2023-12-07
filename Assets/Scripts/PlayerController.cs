@@ -1,15 +1,28 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 5f;
+    [SerializeField] public float speed = 5f;
     private float spriteOffsetX = 0.8f;
     private float spriteOffsetY = 0.5f;
+    public BulletSpawner BulletSpawner;
+    
 
-    void Awake() 
+    void Awake()
     {
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            BulletSpawner.Shoot();
+        }
     }
 
     // Update is called once per frame
