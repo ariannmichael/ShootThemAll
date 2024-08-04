@@ -15,11 +15,12 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
+        
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
             BulletSpawner.Shoot();
         }
@@ -52,5 +53,13 @@ public class PlayerController : MonoBehaviour
         position.y = Mathf.Clamp(position.y, minPosition.y + spriteOffsetY, maxPosition.y - spriteOffsetY);
 
         transform.position = position;
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (!other.gameObject.CompareTag("Pick"))
+        {
+            LevelManager.instance.UpdatePlayerLife(-1);
+        }
     }
 }

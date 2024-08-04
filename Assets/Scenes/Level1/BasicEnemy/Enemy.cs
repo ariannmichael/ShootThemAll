@@ -22,6 +22,10 @@ public class Enemy : MonoBehaviour
         frequency = Random.Range(minFrequency, maxFrequency);
     }
 
+    private void Update()
+    {
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -32,14 +36,12 @@ public class Enemy : MonoBehaviour
         rb.velocity = new Vector2(velocityX, 0);
     }
 
-
-    public void DestroyEnemy(bool laser)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if(laser)
+        if (other.gameObject.CompareTag("Pick"))
         {
-            // Score.ScorePoints += 1;
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
     }
 
     private void OnBecameInvisible()

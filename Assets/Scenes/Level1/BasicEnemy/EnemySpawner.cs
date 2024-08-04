@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawner : MonoBehaviour
+public class EnemySpawner : MonoBehaviour
 {
     public Enemy enemyPrefab;
     private float timeBtwSpawn = 0f;
+    [SerializeField] private float spawnTime = 2f;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +19,7 @@ public class Spawner : MonoBehaviour
     {
         timeBtwSpawn += Time.deltaTime;
 
-        if(timeBtwSpawn >= 2f)
+        if(timeBtwSpawn >= spawnTime)
         {
             timeBtwSpawn = 0f;
 

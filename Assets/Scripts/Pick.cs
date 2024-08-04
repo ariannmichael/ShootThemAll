@@ -6,7 +6,7 @@ using UnityEngine;
 public class Pick : MonoBehaviour
 {
     private Rigidbody2D rb;
-    [SerializeField] private float velocityX = 1.5f; 
+    [SerializeField] private float velocityX = 2f; 
     
     // Start is called before the first frame update
     void Start()
@@ -20,9 +20,9 @@ public class Pick : MonoBehaviour
         rb.velocity = new Vector2(velocityX, 0);
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.layer == 6)
+        if(other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Boss"))
         {
             Destroy(gameObject);
         }
