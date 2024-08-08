@@ -1,16 +1,14 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelManager : MonoBehaviour
+public class BossManager : MonoBehaviour
 {
-    public static LevelManager instance;
-    public SlashBoss slashPrefab;
+    public static BossManager instance;
+    public Boss bossPrefab;
     private float timer = 0f;
-    [SerializeField] private float spawnTime = 0.5f;
-    private bool instanciated = false;
-    private int playerLife = 3;
+    [SerializeField] public float spawnTime = 0.5f;
+    private bool instantiated = false;
 
     private void Awake()
     {
@@ -27,20 +25,15 @@ public class LevelManager : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer >= spawnTime && !instanciated)
+        if (timer >= spawnTime && !instantiated)
         {
             Vector2 maxPosition = Camera.main.ViewportToWorldPoint(Vector2.one); // (1,1)
             
             float positionY = 0.5f;
             Vector2 spawnPosition = new Vector2(maxPosition.x, positionY);
 
-            Instantiate(slashPrefab, spawnPosition, Quaternion.identity);
-            instanciated = true;
+            Instantiate(bossPrefab, spawnPosition, Quaternion.identity);
+            instantiated = true;
         }
-    }
-
-    public void UpdatePlayerLife(int damage)
-    {
-        playerLife -= damage;
     }
 }

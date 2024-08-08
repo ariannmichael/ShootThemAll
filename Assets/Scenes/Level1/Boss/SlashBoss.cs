@@ -2,20 +2,24 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class SlashBoss : Boss
 {
     private static Rigidbody2D rb;
     private float SLASH_SIZE = 120f;
-    private float OFFSET = 80f;
+    private float OFFSET = 100f;
     private float positionXMax;
-    private float amplitude = 0.7f;
-    private float minFrequency = 0.7f;
-    private float maxFrequency = 1.3f;
+    
+    private float amplitude = 1.6f;
+    private float minFrequency = 0.8f;
+    private float maxFrequency = 1f;
     private float frequency;
     private float startY;
-    
+
+    public AttackSpawner attackSpawner;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +42,7 @@ public class SlashBoss : Boss
         }
         
         Movement();
+        Attack();
     }
 
     public override void Movement()
@@ -48,12 +53,17 @@ public class SlashBoss : Boss
 
     public override void Attack()
     {
-        throw new NotImplementedException();
+        this.attackSpawner.Shoot();
     }
 
     public override void Hit(int damage)
     {
-        Debug.Log(damage);
+        health -= damage;
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
     
     private void OnTriggerEnter2D(Collider2D other)
@@ -63,6 +73,4 @@ public class SlashBoss : Boss
             Hit(1);
         }
     }
-    
-    
 }

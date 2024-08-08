@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!other.gameObject.CompareTag("Pick"))
         {
-            LevelManager.instance.UpdatePlayerLife(-1);
+            // LevelManager.instance.UpdatePlayerLife(-1);
         }
     }
 }

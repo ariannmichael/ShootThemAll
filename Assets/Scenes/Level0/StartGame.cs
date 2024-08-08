@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public abstract class Boss : MonoBehaviour
+public class StartGame : MonoBehaviour
 {
-    public int health;
-    
     // Start is called before the first frame update
     void Start()
     {
+        
     }
 
     // Update is called once per frame
@@ -17,7 +17,8 @@ public abstract class Boss : MonoBehaviour
         
     }
 
-    public abstract void Movement();
-    public abstract void Attack();
-    public abstract void Hit(int damage);
+    public void onClick()
+    {
+        SceneManager.LoadScene("Level1");
+    }
 }
