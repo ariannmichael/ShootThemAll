@@ -1,11 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
-public class LevelManager : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
-    public static LevelManager instance;
+    public static UIManager instance;
+    public TMP_Text scoreValue;
 
     private void Awake()
     {

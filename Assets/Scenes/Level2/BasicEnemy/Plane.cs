@@ -4,15 +4,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class Enemy : MonoBehaviour
+public class Plane : Enemy
 {
     private Rigidbody2D rb;
     public float amplitude = 0.7f;
     public float minFrequency = 0.7f;
     public float maxFrequency = 1.3f;
     public float frequency;
-    [SerializeField]private float velocityX = -2f;
+    private float velocityX = -2f;
     private float startY;
+    
+    [SerializeField] private float scoreValue = 1f;
 
     void Start()
     {
@@ -29,11 +31,21 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        Movement();
+    }
+
+    protected override void Movement()
+    {
         // Float up/down with a Sin()
         var yOffset = Mathf.Sin (Time.fixedTime * Mathf.PI * frequency) * amplitude;
         transform.position = new Vector2(transform.position.x, startY + yOffset);
 
         rb.velocity = new Vector2(velocityX, 0);
+    }
+
+    protected override void UpdateScore()
+    {
+        LevelManager.instance.UpdateScore(scoreValue);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

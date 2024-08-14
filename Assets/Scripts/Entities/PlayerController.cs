@@ -55,11 +55,11 @@ public class PlayerController : MonoBehaviour
         transform.position = position;
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.gameObject.CompareTag("Pick"))
         {
-            // LevelManager.instance.UpdatePlayerLife(-1);
+            LevelManager.instance.UpdatePlayerLife("damage");
         }
     }
 }

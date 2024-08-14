@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public Enemy enemyPrefab;
+    [FormerlySerializedAs("enemyPrefab")] public Skull skullPrefab;
     private float timeBtwSpawn = 0f;
     [SerializeField] private float spawnTime = 2f;
 
@@ -29,7 +30,7 @@ public class EnemySpawner : MonoBehaviour
             float positionY = Random.Range(minPosition.y, maxPosition.y);
             Vector2 spawnPosition = new Vector2(maxPosition.x + 0.5f, positionY);
 
-            Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+            Instantiate(skullPrefab, spawnPosition, Quaternion.identity);
         }
     }
 }
