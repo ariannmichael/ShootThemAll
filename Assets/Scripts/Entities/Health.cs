@@ -24,7 +24,7 @@ public class Health : MonoBehaviour
 
     public void Decrease()
     {
-        if (numOfHearts >= 0)
+        if (numOfHearts > 0)
         {
             hearts[numOfHearts - 1].enabled = false;
             numOfHearts -= 1;
