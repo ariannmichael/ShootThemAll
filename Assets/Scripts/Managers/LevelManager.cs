@@ -23,7 +23,6 @@ public class LevelManager : MonoBehaviour
     {
         scoreSO.Value += value;
         UIManager.instance.scoreValue.text = scoreSO.Value + "";
-        Debug.Log(scoreSO.Value);
     }
 
     public void UpdatePlayerLife(string type)

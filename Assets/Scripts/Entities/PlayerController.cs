@@ -8,14 +8,17 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] public float speed = 5f;
+    
     private float spriteOffsetX = 0.8f;
     private float spriteOffsetY = 0.5f;
+    
     public BulletSpawner BulletSpawner;
     
+    private Animator _animator;
 
     void Awake()
     {
-        
+        _animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -59,7 +62,25 @@ public class PlayerController : MonoBehaviour
     {
         if (!other.gameObject.CompareTag("Pick"))
         {
-            LevelManager.instance.UpdatePlayerLife("damage");
+            Damage();
         }
     }
+
+    private void Damage()
+    {
+        if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Hurt"))
+        {
+            return;
+        }
+        
+        _animator.SetTrigger("Hurt");
+        // StartCoroutine(StopAnimation());
+        LevelManager.instance.UpdatePlayerLife("damage");
+    }
+
+    // IEnumerator StopAnimation()
+    // {
+    //     yield return new WaitForSeconds(_invTime);
+    //     _renderer.color = Color.white;
+    // }
 }
