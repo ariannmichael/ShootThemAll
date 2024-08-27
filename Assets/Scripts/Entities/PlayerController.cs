@@ -16,9 +16,19 @@ public class PlayerController : MonoBehaviour
     
     private Animator _animator;
 
+    // [SerializeField] private AudioSource hurtSound;
+
+    [SerializeField] private PlayerSO _playerSo;
+
+    private SpriteRenderer _renderer;
+    public Sprite[] sprites;
+    private int _spriteIndex = 0;
+
     void Awake()
     {
         _animator = GetComponent<Animator>();
+        _renderer = GetComponent<SpriteRenderer>();
+        _renderer.sprite = _playerSo.Sprite;
     }
 
     private void Update()
@@ -26,6 +36,11 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             BulletSpawner.Shoot();
+        }
+
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            ChangeSkin();
         }
     }
 
@@ -58,6 +73,13 @@ public class PlayerController : MonoBehaviour
         transform.position = position;
     }
 
+    private void ChangeSkin()
+    {
+        _spriteIndex = _spriteIndex + 1 >= sprites.Length ? 0 : _spriteIndex + 1;
+        _renderer.sprite = sprites[_spriteIndex];
+        _playerSo.Sprite = sprites[_spriteIndex];
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.gameObject.CompareTag("Pick"))
@@ -73,9 +95,12 @@ public class PlayerController : MonoBehaviour
             return;
         }
         
+        // hurtSound.Play();
         _animator.SetTrigger("Hurt");
-        // StartCoroutine(StopAnimation());
         LevelManager.instance.UpdatePlayerLife("damage");
+        
+        
+        // StartCoroutine(StopAnimation());
     }
 
     // IEnumerator StopAnimation()
