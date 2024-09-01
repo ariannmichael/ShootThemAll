@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Entities.Attack;
+using Strategies;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -24,17 +26,22 @@ public class PlayerController : MonoBehaviour
     public Sprite[] sprites;
     private int _spriteIndex = 0;
 
+    private AttackStrategy _attackStrategy;
+
     void Awake()
     {
         _animator = GetComponent<Animator>();
         _renderer = GetComponent<SpriteRenderer>();
         _renderer.sprite = _playerSo.Sprite;
+        _attackStrategy = new AttackStrategy();
+        _attackStrategy.SetStrategy(new BasicAttack());
     }
 
     private void Update()
     {
         if (Input.GetKey(KeyCode.Space))
         {
+            _attackStrategy.Shoot();
             BulletSpawner.Shoot();
         }
 
@@ -82,9 +89,25 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.gameObject.CompareTag("Pick"))
+        if (!other.gameObject.CompareTag("Pick") && !other.gameObject.CompareTag("PowerUp"))
         {
             Damage();
+        }
+    }
+
+    public void UpdateAttack(string pedal)
+    {
+        switch (pedal)
+        {
+            case "DS1":
+                _attackStrategy.SetStrategy(new AttackBigger());
+                break;
+            case "OD1":
+                _attackStrategy.SetStrategy(new AttackDouble());
+                break;
+            case "TS9":
+                _attackStrategy.SetStrategy(new AttackSpeed());
+                break;
         }
     }
 

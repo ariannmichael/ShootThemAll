@@ -54,6 +54,15 @@ public class Skull : Enemy
         {
             UpdateScore();
             Destroy(gameObject);
+            if (this.ReturnWithProbability(dropPowerUpChance))
+            {
+                DropItem();
+                Debug.Log("Drop power up");
+            } else if (this.ReturnWithProbability(dropLifeChance))
+            {
+                DropItem();
+                Debug.Log("Drop life");
+            }
         }
         else if (other.gameObject.CompareTag("Player"))
         {

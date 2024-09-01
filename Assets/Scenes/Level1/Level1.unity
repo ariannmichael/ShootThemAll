@@ -1690,6 +1690,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 063e944e191a2432bbc29a497dc8a357, type: 3}
+    - target: {fileID: 5042883284356555361, guid: 0cb1a4c215c2d47ccb6415de58fb9526, type: 3}
+      propertyPath: spawnTime
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 6025102342963018112, guid: 0cb1a4c215c2d47ccb6415de58fb9526, type: 3}
       propertyPath: m_Sprite
       value: 
