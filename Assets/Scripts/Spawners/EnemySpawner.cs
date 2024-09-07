@@ -5,7 +5,7 @@ using UnityEngine.Serialization;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [FormerlySerializedAs("enemyPrefab")] public Skull skullPrefab;
+    [FormerlySerializedAs("enemyPrefab")] public Enemy skullPrefab;
     private float timeBtwSpawn = 0f;
     [SerializeField] private float spawnTime = 2f;
 

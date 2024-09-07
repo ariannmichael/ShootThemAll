@@ -2,40 +2,36 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
-using Random = UnityEngine.Random;
 
-public class SlashBoss : Boss
+public class ZeppelinBoss : Boss
 {
     private static Rigidbody2D rb;
-    private float SLASH_SIZE = 120f;
+    private float ZEPPELIN_SIZE = 140f;
     private float OFFSET = 100f;
     private float positionXMax;
-    
+
     private float amplitude = 1.6f;
-    private float minFrequency = 0.8f;
-    private float maxFrequency = 1f;
+    // private float minFrequency = 0.8f;
+    // private float maxFrequency = 1f;
     private float frequency;
     private float startY;
 
-    [FormerlySerializedAs("attackSpawner")] public SlashAttackSpawner slashAttackSpawner;
-
+    public ZeppelinAttackSpawner zAttackSpawner;
+    
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        Vector2 maxPosition = Camera.main.ViewportToWorldPoint(Vector2.one); // (1,1)
-        positionXMax = maxPosition.x - (SLASH_SIZE + OFFSET)/100;
+        Vector2 maxPosition = Camera.main.ViewportToWorldPoint(Vector2.one);
+        positionXMax = maxPosition.x - (ZEPPELIN_SIZE + OFFSET) / 100;
 
         startY = transform.position.y;
-        frequency = Random.Range(minFrequency, maxFrequency);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.x > positionXMax)
+        if (transform.position.x > positionXMax)
         {
             Vector2 position = transform.position;
             position.x -= Time.deltaTime;
@@ -54,7 +50,7 @@ public class SlashBoss : Boss
 
     public override void Attack()
     {
-        this.slashAttackSpawner.Shoot();
+        zAttackSpawner.Shoot();
     }
 
     public override void Hit(int damage)
@@ -64,10 +60,9 @@ public class SlashBoss : Boss
         if (health <= 0)
         {
             Destroy(gameObject);
-            SceneManager.LoadScene("Level2");
         }
     }
-    
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Pick"))

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BossBullet : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    [SerializeField] private float velocityX = 2f; 
+    protected Rigidbody2D rb;
+    public float velocityX = 2f; 
     
     // Start is called before the first frame update
     void Start()

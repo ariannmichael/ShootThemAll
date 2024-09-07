@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 590109836192854828}
   - component: {fileID: 1484099656116867990}
   - component: {fileID: 2453109985016077814}
+  - component: {fileID: 1806677321043288965}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -210,3 +211,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   BulletSpawner: {fileID: 1472702670815624552}
+  _playerSo: {fileID: 11400000, guid: 23004bf2238dc40fcbfee646339f26e4, type: 2}
+  sprites:
+  - {fileID: 21300000, guid: 33fd7ce36f2904422929e0e4e0f1a5e8, type: 3}
+  - {fileID: 21300000, guid: e69852e1c67884d9e81ceffaf5f40519, type: 3}
+  - {fileID: 21300000, guid: 94c001ff2e54040bcbb56d6bc14b5259, type: 3}
+--- !u!95 &1806677321043288965
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8696086776400490891}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 431073bea4f404c0b887e55015faa185, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

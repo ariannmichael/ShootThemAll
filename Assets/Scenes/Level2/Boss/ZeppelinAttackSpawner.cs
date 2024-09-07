@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackSpawner : MonoBehaviour
+public class ZeppelinAttackSpawner : MonoBehaviour
 {
     public GameObject bulletPrefab;
     private float timeBtwAttack = 0f;
@@ -31,17 +31,9 @@ public class AttackSpawner : MonoBehaviour
     {
         if(!isSpawned)
         {
-            InstantiateBulletWithRotation(15);
-            InstantiateBulletWithRotation(0);
-            InstantiateBulletWithRotation(-15);
+            Instantiate(bulletPrefab, transform.position, Quaternion.Euler(0, 0, 90));
             
             isSpawned = true;
         }
-    }
-
-    void InstantiateBulletWithRotation(float angle)
-    {
-        Quaternion rotation = bulletPrefab.transform.rotation * Quaternion.Euler(0, 0, angle);
-        Instantiate(bulletPrefab, transform.position, rotation);
     }
 }

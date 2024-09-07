@@ -7,9 +7,9 @@ using Random = UnityEngine.Random;
 public class Plane : Enemy
 {
     private Rigidbody2D rb;
-    public float amplitude = 0.7f;
-    public float minFrequency = 0.7f;
-    public float maxFrequency = 1.3f;
+    public float amplitude = 2f;
+    public float minFrequency = 1f;
+    public float maxFrequency = 3f;
     public float frequency;
     private float velocityX = -2f;
     private float startY;
