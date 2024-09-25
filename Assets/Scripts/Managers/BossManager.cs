@@ -4,16 +4,11 @@ using UnityEngine;
 
 public class BossManager : Subject
 {
-    public static BossManager instance;
     public Boss bossPrefab;
     private float timer = 0f;
     [SerializeField] public float spawnTime = 100.0f;
     private bool instantiated = false;
 
-    private void Awake()
-    {
-        instance = this;
-    }
 
     // Start is called before the first frame update
     void Start()
