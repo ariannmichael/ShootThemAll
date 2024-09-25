@@ -6,8 +6,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance;
-    [SerializeField]
-    private FloatSO scoreSO;
+    [SerializeField] private FloatSO scoreSO;
 
     private void Awake()
     {

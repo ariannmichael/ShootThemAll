@@ -6,7 +6,6 @@ namespace Entities.Attack
     {
         public void Shoot()
         {
-            Debug.Log("Attack Basic");
         }
     }
 }

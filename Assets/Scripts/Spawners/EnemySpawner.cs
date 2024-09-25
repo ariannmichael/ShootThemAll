@@ -3,21 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class EnemySpawner : MonoBehaviour
+public class EnemySpawner : MonoBehaviour, IObserver
 {
     [FormerlySerializedAs("enemyPrefab")] public Enemy skullPrefab;
     private float timeBtwSpawn = 0f;
     [SerializeField] private float spawnTime = 2f;
+    [SerializeField] Subject _subject;
+    public bool isSpawning { get; set; } = true;
 
-    // Start is called before the first frame update
-    void Start()
+
+    private void OnEnable()
     {
-        
+        _subject.AddObserver(this);
+    }
+
+    private void OnDisable() {
+        _subject.RemoveObserver(this);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!isSpawning) return;
+
         timeBtwSpawn += Time.deltaTime;
 
         if(timeBtwSpawn >= spawnTime)
@@ -32,5 +40,10 @@ public class EnemySpawner : MonoBehaviour
 
             Instantiate(skullPrefab, spawnPosition, Quaternion.identity);
         }
+    }
+
+    public void OnNotify()
+    {
+        isSpawning = false;
     }
 }

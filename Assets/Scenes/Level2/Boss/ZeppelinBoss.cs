@@ -17,11 +17,13 @@ public class ZeppelinBoss : Boss
     private float startY;
 
     public ZeppelinAttackSpawner zAttackSpawner;
+    private Animator _animator;
     
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
         Vector2 maxPosition = Camera.main.ViewportToWorldPoint(Vector2.one);
         positionXMax = maxPosition.x - (ZEPPELIN_SIZE + OFFSET) / 100;
 
@@ -56,6 +58,8 @@ public class ZeppelinBoss : Boss
     public override void Hit(int damage)
     {
         health -= damage;
+
+        _animator.SetTrigger("Hurt");
 
         if (health <= 0)
         {
