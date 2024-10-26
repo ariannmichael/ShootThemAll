@@ -2,26 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossManager : Subject
+public class BossManager : Subject, IObserver
 {
     public Boss bossPrefab;
-    private float timer = 0f;
-    [SerializeField] public float spawnTime = 100.0f;
+    [SerializeField] private TimerComponent _timerComponent;
     private bool instantiated = false;
+    
 
-
-    // Start is called before the first frame update
-    void Start()
+    public void OnNotify()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        timer += Time.deltaTime;
-
-        if (timer >= spawnTime && !instantiated)
+        if (!instantiated)
         {
             Vector2 maxPosition = Camera.main.ViewportToWorldPoint(Vector2.one); // (1,1)
             

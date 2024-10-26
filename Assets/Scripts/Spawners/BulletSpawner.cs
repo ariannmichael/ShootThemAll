@@ -3,22 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletSpawner : MonoBehaviour
+public class BulletSpawner : MonoBehaviour, IObserver
 {
     public GameObject bulletPrefab;
-    private float timeBtwSpawn = 0f;
     private bool isSpawned = false;
-    public float spawnTime = 1f;
+    public TimerComponent timerComponent;
 
-    private void Update()
+    private void OnEnable()
     {
-        timeBtwSpawn += Time.deltaTime;
+        timerComponent.AddObserver(this);
+    }
 
-        if (timeBtwSpawn >= spawnTime)
-        {
-            isSpawned = false;
-            timeBtwSpawn = 0;
-        }
+    private void OnDisable()
+    {
+        timerComponent.RemoveObserver(this);
     }
 
     public void Shoot()
@@ -28,5 +26,10 @@ public class BulletSpawner : MonoBehaviour
             Instantiate(bulletPrefab, transform.position, bulletPrefab.transform.rotation);
             isSpawned = true;
         }
+    }
+
+    public void OnNotify()
+    {
+        isSpawned = false;
     }
 }
