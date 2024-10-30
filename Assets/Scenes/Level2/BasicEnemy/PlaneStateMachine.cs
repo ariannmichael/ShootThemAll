@@ -13,26 +13,24 @@ public class PlaneStateMachine : StateMachine<PlaneStateMachine.PlaneState>
     
     
     public Rigidbody2D rb;
-    private BaseState<PlaneState> currentState;
+    public GameObject player;
 
 
-    private void Awake()
+    void Awake()
     {
-        // rb = GetComponent<Rigidbody2D>();
+        player = GameObject.FindWithTag("Player");
         
         PlaneIdleState planeIdleState = new PlaneIdleState();
         PlaneFollowState planeFollowState = new PlaneFollowState();
         
-        states.Add(PlaneState.Idle, planeIdleState);
-        states.Add(PlaneState.Follow, planeFollowState);
-
-        currentState = planeIdleState;
+        states[PlaneState.Idle] = planeIdleState;
+        states[PlaneState.Follow] = planeFollowState;
+        currentState = states[PlaneState.Idle];
     }
 
     new void Start()
     {
         if (currentState == null) return;
-        
         currentState.EnterState(this);
     }
 

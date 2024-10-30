@@ -6,14 +6,15 @@ using UnityEngine;
 public abstract class StateMachine<EState> : MonoBehaviour where EState : Enum
 {
     protected Dictionary<EState, BaseState<EState>> states = new ();
-    private BaseState<EState> currentState;
+    protected BaseState<EState> currentState;
 
     public void Start()
     {
-        if (currentState != null)
+        if (currentState == null)
         {
-            currentState.EnterState(this);
+            return;
         }
+        currentState.EnterState(this);
     }
 
     public void Update()

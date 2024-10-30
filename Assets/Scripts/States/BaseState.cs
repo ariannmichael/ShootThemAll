@@ -10,12 +10,31 @@ public abstract class BaseState<EState> where EState : Enum
         stateKey = key;
     }
 
-    public abstract void EnterState(StateMachine<EState> plane);
-    public abstract void ExitState();
-    public abstract void UpdateState();
-    public abstract void FixedUpdateState();
+    public virtual void EnterState(StateMachine<EState> plane) {}
+
+    public virtual void ExitState()
+    {
+    }
+
+    public virtual void UpdateState()
+    {
+    }
+
+    public virtual void FixedUpdateState()
+    {
+    }
+
     public abstract EState GetNextState();
-    public abstract void OnTriggerEnter(Collider collider);
-    public abstract void OnTriggerStay(Collider collider);
-    public abstract void OnTriggerExit(Collider collider);
+
+    public virtual void OnTriggerEnter(Collider collider)
+    {
+    }
+
+    public virtual void OnTriggerStay(Collider collider)
+    {
+    }
+
+    public virtual void OnTriggerExit(Collider collider)
+    {
+    }
 }

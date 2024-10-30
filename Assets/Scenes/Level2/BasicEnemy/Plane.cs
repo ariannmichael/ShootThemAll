@@ -27,7 +27,7 @@ public class Plane : Enemy
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Pick"))
+        if (other.gameObject.CompareTag("Pick") || other.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
         }

@@ -412,6 +412,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 614877274}
     - target: {fileID: 2476840460849777769, guid: 0cb1a4c215c2d47ccb6415de58fb9526, type: 3}
+      propertyPath: spawnTime
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2476840460849777769, guid: 0cb1a4c215c2d47ccb6415de58fb9526, type: 3}
       propertyPath: skullPrefab
       value: 
       objectReference: {fileID: 7132173737336651967, guid: 32f4b1bf853f84104b7555bcc17804f0, type: 3}

@@ -20,7 +20,6 @@ public class BossManager : Subject, IObserver
 
             Instantiate(bossPrefab, spawnPosition, Quaternion.identity);
             instantiated = true;
-            NotifyObservers();
         }
     }
 }
