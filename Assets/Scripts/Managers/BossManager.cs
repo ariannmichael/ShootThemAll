@@ -9,6 +9,16 @@ public class BossManager : Subject, IObserver
     private bool instantiated = false;
     
 
+    private void OnEnable()
+    {
+        _timerComponent.AddObserver(this);
+    }
+
+    private void OnDisable()
+    {
+        _timerComponent.RemoveObserver(this);
+    }
+
     public void OnNotify()
     {
         if (!instantiated)
@@ -20,6 +30,7 @@ public class BossManager : Subject, IObserver
 
             Instantiate(bossPrefab, spawnPosition, Quaternion.identity);
             instantiated = true;
+            NotifyObservers();
         }
     }
 }

@@ -14,7 +14,6 @@ public class PlaneFollowState : BaseState<PlaneStateMachine.PlaneState>
     private float maxMagnitude = 2f;
     private float switchMagnitude = 5f;
     private float velocityX = -2f;
-    private int delayTime = 400;
     
     public PlaneFollowState() : base(PlaneStateMachine.PlaneState.Follow)
     {
