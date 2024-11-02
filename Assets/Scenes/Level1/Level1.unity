@@ -1558,7 +1558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 605c877f066624237894b540e42380f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeDuration: 100
+  timeDuration: 1
 --- !u!1001 &7502061813441509261
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1632,6 +1632,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1806677321043288965, guid: 10596739633624690ad9f866a8a35c57, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2453109985016077814, guid: 10596739633624690ad9f866a8a35c57, type: 3}
+      propertyPath: flashComponent
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519530543351450562, guid: 10596739633624690ad9f866a8a35c57, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 4642828115968055847, guid: 10596739633624690ad9f866a8a35c57, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.67

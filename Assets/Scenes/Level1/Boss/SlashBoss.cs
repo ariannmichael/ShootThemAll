@@ -19,6 +19,8 @@ public class SlashBoss : Boss
     private float frequency;
     private float startY;
 
+    [SerializeField] private Animator _animator;
+
     [FormerlySerializedAs("attackSpawner")] public SlashAttackSpawner slashAttackSpawner;
 
     // Start is called before the first frame update
@@ -59,6 +61,12 @@ public class SlashBoss : Boss
 
     public override void Hit(int damage)
     {
+        // if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Hurt")) {
+        //     return;
+        // }
+
+        _animator.SetTrigger("Hurt");
+
         health -= damage;
 
         if (health <= 0)
