@@ -61,10 +61,6 @@ public class SlashBoss : Boss
 
     public override void Hit(int damage)
     {
-        // if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Hurt")) {
-        //     return;
-        // }
-
         _animator.SetTrigger("Hurt");
 
         health -= damage;

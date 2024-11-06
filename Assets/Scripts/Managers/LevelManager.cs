@@ -28,6 +28,7 @@ public class LevelManager : MonoBehaviour
     {
         if (type == "damage")
         {
+            AudioManager.instance.PlaySFX(AudioManager.instance.hurt);
             Health.instance.Decrease();
         }
         else
