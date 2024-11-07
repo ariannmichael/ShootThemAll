@@ -447,7 +447,7 @@ AudioSource:
   m_GameObject: {fileID: 518014096}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -5281804769684311545, guid: 25a3109bbde7e4c2db0739ca17894de1, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -1399,7 +1399,7 @@ AudioSource:
   m_GameObject: {fileID: 1920576013}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 1506568600322714483, guid: 25a3109bbde7e4c2db0739ca17894de1, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -1568,7 +1568,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_TargetDisplay: 0
 --- !u!224 &1999783172
 RectTransform:
@@ -1791,6 +1791,10 @@ PrefabInstance:
       propertyPath: _timerComponent
       value: 
       objectReference: {fileID: 796520131590410288}
+    - target: {fileID: 5047152381501618325, guid: 0cb1a4c215c2d47ccb6415de58fb9526, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6025102342963018112, guid: 0cb1a4c215c2d47ccb6415de58fb9526, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1869,7 +1873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 605c877f066624237894b540e42380f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeDuration: 1
+  timeDuration: 31
 --- !u!1001 &7502061813441509261
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1943,18 +1947,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1806677321043288965, guid: 10596739633624690ad9f866a8a35c57, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2453109985016077814, guid: 10596739633624690ad9f866a8a35c57, type: 3}
-      propertyPath: flashComponent
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2519530543351450562, guid: 10596739633624690ad9f866a8a35c57, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 4642828115968055847, guid: 10596739633624690ad9f866a8a35c57, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.67
