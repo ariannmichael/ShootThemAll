@@ -28,7 +28,7 @@ public class BossManager : Subject, IObserver
             float positionY = 0.5f;
             Vector2 spawnPosition = new Vector2(maxPosition.x, positionY);
 
-            Instantiate(bossPrefab, spawnPosition, Quaternion.identity);
+            Instantiate(bossPrefab, spawnPosition, bossPrefab.transform.rotation);
             instantiated = true;
             NotifyObservers();
         }

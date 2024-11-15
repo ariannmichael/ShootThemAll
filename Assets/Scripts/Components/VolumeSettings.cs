@@ -23,6 +23,7 @@ public class VolumeSettings : MonoBehaviour
     private void LoadVolume()
     {
         if (PlayerPrefs.HasKey("MusicVolume"))
+        {
             musicSlider.value = PlayerPrefs.GetFloat("MusicVolume");
         }
     }

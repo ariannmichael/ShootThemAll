@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ZeppelinBoss : Boss
+public class EVHBoss : Boss
 {
     private static Rigidbody2D rb;
     private float ZEPPELIN_SIZE = 140f;
@@ -17,7 +17,7 @@ public class ZeppelinBoss : Boss
     private float frequency;
     private float startY;
 
-    public ZeppelinAttackSpawner zAttackSpawner;
+    public EVHAttackSpawner zAttackSpawner;
     private Animator _animator;
     
     // Start is called before the first frame update
