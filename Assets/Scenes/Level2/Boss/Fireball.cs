@@ -10,11 +10,6 @@ public class Fireball : BossBullet
     void Update()
     {
         this.rb.velocity = transform.up * this.velocityX * -1f;
-        Rotate();
-    }
 
-    void Rotate()
-    {
-        childSpriteObject.transform.Rotate(0, 0, 500 * Time.deltaTime);
     }
 }

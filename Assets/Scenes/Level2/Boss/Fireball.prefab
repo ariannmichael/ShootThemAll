@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 243a1abfc75064161a9df05c2d3333fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityX: -8
+  velocityX: -13
   childSpriteObject: {fileID: 7403316247938625311}
 --- !u!1 &7403316247938625311
 GameObject:

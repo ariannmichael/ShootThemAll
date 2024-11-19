@@ -6,7 +6,7 @@ public class ZeppelinAttackSpawner : MonoBehaviour
 {
     public GameObject bulletPrefab;
     private float timeBtwAttack = 0f;
-    private float spawnTime = 5f;
+    [SerializeField] private float spawnTime = 5f;
     private bool isSpawned = false;
     
     // Start is called before the first frame update

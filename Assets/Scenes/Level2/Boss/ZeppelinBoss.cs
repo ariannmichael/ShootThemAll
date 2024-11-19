@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 public class ZeppelinBoss : Boss
 {
@@ -12,8 +13,8 @@ public class ZeppelinBoss : Boss
     private float positionXMax;
 
     private float amplitude = 1.6f;
-    // private float minFrequency = 0.8f;
-    // private float maxFrequency = 1f;
+    private float minFrequency = 0.8f;
+    private float maxFrequency = 1f;
     private float frequency;
     private float startY;
 
@@ -29,6 +30,7 @@ public class ZeppelinBoss : Boss
         positionXMax = maxPosition.x - (ZEPPELIN_SIZE + OFFSET) / 100;
 
         startY = transform.position.y;
+        frequency = Random.Range(minFrequency, maxFrequency);
     }
 
     // Update is called once per frame
