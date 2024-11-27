@@ -59,6 +59,11 @@ public class SlashBoss : Boss
         this.slashAttackSpawner.Shoot();
     }
 
+    private void UpdateScore()
+    {
+        LevelManager.instance.UpdateScore(1000);
+    }
+
     public override void Hit(int damage)
     {
         _animator.SetTrigger("Hurt");
@@ -67,6 +72,7 @@ public class SlashBoss : Boss
 
         if (health <= 0)
         {
+            UpdateScore();
             Destroy(gameObject);
             SceneManager.LoadScene("Level2");
         }

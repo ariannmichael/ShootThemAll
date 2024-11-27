@@ -65,7 +65,7 @@ public class EVHBoss : Boss
         if (health <= 0)
         {
             Destroy(gameObject);
-            SceneManager.LoadScene("Level3");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 

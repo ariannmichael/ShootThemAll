@@ -18,8 +18,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private PlayerSO _playerSo;
 
     private SpriteRenderer _renderer;
-    public Sprite[] sprites;
-    private int _spriteIndex = 0;
 
     private AttackStrategy _attackStrategy;
     [SerializeField] private PlayerMovement _playerMovement;
@@ -40,11 +38,6 @@ public class PlayerController : MonoBehaviour
             _attackStrategy.Shoot();
             BulletSpawner.Shoot();
         }
-
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            ChangeSkin();
-        }
     }
 
     // Update is called once per frame
@@ -53,12 +46,7 @@ public class PlayerController : MonoBehaviour
         _playerMovement.Movement();
     }
     
-    private void ChangeSkin()
-    {
-        _spriteIndex = _spriteIndex + 1 >= sprites.Length ? 0 : _spriteIndex + 1;
-        _renderer.sprite = sprites[_spriteIndex];
-        _playerSo.Sprite = sprites[_spriteIndex];
-    }
+    
 
     private void OnTriggerEnter2D(Collider2D other)
     {

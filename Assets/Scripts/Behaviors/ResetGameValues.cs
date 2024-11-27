@@ -9,6 +9,6 @@ public class ResetGameValues : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scoreSO.Value = 0;
+        // scoreSO.Value = 0;
     }
 }

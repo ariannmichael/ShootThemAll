@@ -58,6 +58,11 @@ public class ZeppelinBoss : Boss
         zAttackSpawner.Shoot();
     }
 
+    public void UpdateScore()
+    {
+        LevelManager.instance.UpdateScore(2000);
+    }
+
     public override void Hit(int damage)
     {
         health -= damage;
@@ -66,6 +71,7 @@ public class ZeppelinBoss : Boss
 
         if (health <= 0)
         {
+            UpdateScore();
             Destroy(gameObject);
             SceneManager.LoadScene("Level3");
         }
