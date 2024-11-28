@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
@@ -20,6 +21,10 @@ public class ZeppelinBoss : Boss
 
     public ZeppelinAttackSpawner zAttackSpawner;
     private Animator _animator;
+
+    private float timeBtwSpecialAttack = 0f;
+    [SerializeField] private float specialAttackTime = 20f;
+    private bool isSpecialAttack = true;
     
     // Start is called before the first frame update
     void Start()
@@ -42,9 +47,19 @@ public class ZeppelinBoss : Boss
             position.x -= Time.deltaTime;
             transform.position = position;
         }
+
+        timeBtwSpecialAttack += Time.deltaTime;
+
+        if(timeBtwSpecialAttack >= specialAttackTime)
+        {
+            isSpecialAttack = false;
+            _animator.SetTrigger("Special");
+            timeBtwSpecialAttack = 0;
+        }
         
         Movement();
         Attack();
+        SpecialAttack();
     }
 
     public override void Movement()
@@ -56,6 +71,41 @@ public class ZeppelinBoss : Boss
     public override void Attack()
     {
         zAttackSpawner.Shoot();
+    }
+
+    public void SpecialAttack()
+    {
+        AnimatorStateInfo stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
+        if (stateInfo.IsName("Special") && stateInfo.normalizedTime < 1)
+        {
+            return;
+        }
+
+        float specialAttackVelocity = 5f;
+        // Go fast to the most left side of the screen then come back to the right side that it was before but slowly
+        if (!isSpecialAttack)
+        {
+            if (transform.position.x > -positionXMax)
+            {
+                Vector2 position = transform.position;
+                position.x -= Time.deltaTime * specialAttackVelocity;
+                transform.position = position;
+            }
+            else
+            {
+                isSpecialAttack = true;
+            }
+        }
+        else
+        {
+            if (transform.position.x < positionXMax)
+            {
+                Vector2 position = transform.position;
+                position.x += Time.deltaTime * specialAttackVelocity / 2;
+                transform.position = position;
+            }
+        }
+
     }
 
     public void UpdateScore()
