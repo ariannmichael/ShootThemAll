@@ -32,6 +32,10 @@ public class StartGame : MonoBehaviour
             FlyingVDisabled.gameObject.SetActive(false);
         }
 
+        if (PlayerPrefs.HasKey("EVH") && PlayerPrefs.GetInt("EVH") == 1) {
+            EVHDisabled.gameObject.SetActive(false);
+        }
+
         buttons[_spriteIndex].interactable = false;
     }
 

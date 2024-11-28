@@ -2628,7 +2628,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 1933109490}
   SFXSource: {fileID: 1439794434}
-  background: {fileID: 8300000, guid: ccc89e17106884f1ca5a11345dd842b4, type: 3}
+  background: {fileID: 8300000, guid: 53a316079e12a4a0bb6cda1a7df8ae4c, type: 3}
   death: {fileID: 0}
   hurt: {fileID: 8300000, guid: a6035e9d9971743a799e5def6fc050be, type: 3}
   levelEnd: {fileID: 0}

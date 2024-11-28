@@ -6,7 +6,7 @@ public class EVHAttackSpawner : MonoBehaviour
 {
     public GameObject bulletPrefab;
     private float timeBtwAttack = 0f;
-    private float spawnTime = 5f;
+    private float spawnTime = 3f;
     private bool isSpawned = false;
     
     // Start is called before the first frame update
@@ -31,7 +31,7 @@ public class EVHAttackSpawner : MonoBehaviour
     {
         if(!isSpawned)
         {
-            Instantiate(bulletPrefab, transform.position, Quaternion.Euler(0, 0, 90));
+            Instantiate(bulletPrefab, transform.position, Quaternion.Euler(0, 0, -90));
             
             isSpawned = true;
         }

@@ -161,7 +161,7 @@ Animator:
   m_GameObject: {fileID: 2735637166945299080}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 533a3e0ee050c4c1e8e4323533af3898, type: 2}
+  m_Controller: {fileID: 9100000, guid: 560e6e13c075245bebdaa5c6b439af8c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -184,8 +184,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da57d9b0d738746949750f8f589e26d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
+  health: 25
   zAttackSpawner: {fileID: 5026913462097279721}
+  specialTime: 1
+  specialAttackTime: 3
 --- !u!1 &6920469749874573930
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,4 +232,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5217d53230a143e48eeee919a5bb5b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 4028895788338212604, guid: fb05d0ca228094afbb29a3e2e6acf078, type: 3}
+  bulletPrefab: {fileID: 6563325956628790291, guid: 2bf079f1870a842bdbcdea0a332f30d6, type: 3}

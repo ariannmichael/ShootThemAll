@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 5013031923706574658}
   - component: {fileID: 2646676370745277004}
   - component: {fileID: 3920295578125170932}
-  - component: {fileID: 7054251220519446461}
+  - component: {fileID: 7338925591965472146}
   m_Layer: 6
-  m_Name: Pick
-  m_TagString: Pick
+  m_Name: PickEVH
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,13 +28,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6563325956628790291}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!212 &5013031923706574658
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f2af80a7d793a4ed09c19e13e412a557, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 48de99ed408fa444589b849ba5d4c4b9, type: 3}
+  m_Color: {r: 0.9953726, g: 1, b: 0.995283, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -149,7 +149,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &7054251220519446461
+--- !u!114 &7338925591965472146
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,7 +158,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 6563325956628790291}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5860ea7a542d74fbf8d284840227bc72, type: 3}
+  m_Script: {fileID: 11500000, guid: 5575b19f4c48f4ada8117eaff97e909a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityX: 5
+  velocityX: 15
+  childSpriteObject: {fileID: 6563325956628790291}
