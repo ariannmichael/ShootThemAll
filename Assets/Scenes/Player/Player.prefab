@@ -59,7 +59,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 605c877f066624237894b540e42380f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeDuration: 1
 --- !u!1 &8696086776400490891
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,11 +225,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletSpawner: {fileID: 1472702670815624552}
   _playerSo: {fileID: 11400000, guid: 23004bf2238dc40fcbfee646339f26e4, type: 2}
-  sprites:
-  - {fileID: 21300000, guid: 33fd7ce36f2904422929e0e4e0f1a5e8, type: 3}
-  - {fileID: 21300000, guid: e69852e1c67884d9e81ceffaf5f40519, type: 3}
-  - {fileID: 21300000, guid: 700b1439eb1cd4c1d89cb8a2bf61364f, type: 3}
-  - {fileID: 21300000, guid: a649fbf6fe4244ca8b677412b0d9b907, type: 3}
   _playerMovement: {fileID: 7414380100588201061}
 --- !u!114 &7414380100588201061
 MonoBehaviour:

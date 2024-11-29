@@ -12,7 +12,6 @@ public class PowerUp : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             PlayerController player = other.gameObject.GetComponent<PlayerController>();
-            player.UpdateAttack(pedal);
             Destroy(gameObject);
         }
     }

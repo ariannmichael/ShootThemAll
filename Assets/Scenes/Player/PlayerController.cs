@@ -13,13 +13,10 @@ public class PlayerController : MonoBehaviour
     
     private Animator _animator;
 
-    // [SerializeField] private AudioSource hurtSound;
-
     [SerializeField] private PlayerSO _playerSo;
 
     private SpriteRenderer _renderer;
 
-    private AttackStrategy _attackStrategy;
     [SerializeField] private PlayerMovement _playerMovement;
 
     void Awake()
@@ -27,15 +24,12 @@ public class PlayerController : MonoBehaviour
         _animator = GetComponent<Animator>();
         _renderer = GetComponent<SpriteRenderer>();
         _renderer.sprite = _playerSo.Sprite;
-        _attackStrategy = new AttackStrategy();
-        _attackStrategy.SetStrategy(new BasicAttack());
     }
 
     private void Update()
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            _attackStrategy.Shoot();
             BulletSpawner.Shoot();
         }
     }
@@ -45,30 +39,12 @@ public class PlayerController : MonoBehaviour
     {
         _playerMovement.Movement();
     }
-    
-    
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.gameObject.CompareTag("Pick") && !other.gameObject.CompareTag("PowerUp"))
         {
             Damage();
-        }
-    }
-
-    public void UpdateAttack(string pedal)
-    {
-        switch (pedal)
-        {
-            case "DS1":
-                _attackStrategy.SetStrategy(new AttackBigger());
-                break;
-            case "OD1":
-                _attackStrategy.SetStrategy(new AttackDouble());
-                break;
-            case "TS9":
-                _attackStrategy.SetStrategy(new AttackSpeed());
-                break;
         }
     }
 

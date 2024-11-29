@@ -50,6 +50,7 @@ public class StartGame : MonoBehaviour
         buttons[_spriteIndex].interactable = true;
         _spriteIndex = index >= sprites.Length ? 0 : index;
         _playerSo.Sprite = sprites[_spriteIndex];
+        PlayerPrefs.SetInt("PlayerSkin", _spriteIndex);
         buttons[_spriteIndex].interactable = false;
     }
 

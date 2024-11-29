@@ -4,8 +4,11 @@ namespace Entities.Attack
 {
     public class BasicAttack : IAttack
     {
+        public BulletSpawner BulletSpawner;
+
         public void Shoot()
         {
+            BulletSpawner.Shoot();
         }
     }
 }
