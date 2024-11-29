@@ -188,6 +188,7 @@ MonoBehaviour:
   zAttackSpawner: {fileID: 5026913462097279721}
   specialTime: 1
   specialAttackTime: 3
+  _playerSo: {fileID: 11400000, guid: 23004bf2238dc40fcbfee646339f26e4, type: 2}
 --- !u!1 &6920469749874573930
 GameObject:
   m_ObjectHideFlags: 0

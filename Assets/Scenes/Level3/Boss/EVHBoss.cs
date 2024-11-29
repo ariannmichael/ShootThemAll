@@ -27,6 +27,8 @@ public class EVHBoss : Boss
     private float timeBtwSpecialAttack = 0f;
     [SerializeField] private float specialAttackTime = 1f;
     private bool isSpecialAttack = true;
+
+    [SerializeField] private PlayerSO _playerSo;
     
     // Start is called before the first frame update
     void Start()
@@ -116,7 +118,7 @@ public class EVHBoss : Boss
     public void UpdateScore()
     {
         LevelManager.instance.UpdateScore(5000);
-        PlayerPrefs.SetInt("Finished", 1);
+        _playerSo.Complete = true;
     }
 
     public override void Hit(int damage)
@@ -127,6 +129,7 @@ public class EVHBoss : Boss
 
         if (health <= 0)
         {
+            UpdateScore();
             Destroy(gameObject);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }

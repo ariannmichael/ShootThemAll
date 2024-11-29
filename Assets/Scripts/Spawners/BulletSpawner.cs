@@ -63,7 +63,7 @@ public class BulletSpawner : MonoBehaviour, IObserver
 
     void InstantiateBiggerBullet()
     {
-        bulletPrefab.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
-        Instantiate(bulletPrefab, transform.position, bulletPrefab.transform.rotation, transform);
+        bulletPrefab.transform.localScale = new Vector3(2.5f, 2.5f, 1f);
+        Instantiate(bulletPrefab, transform.position, bulletPrefab.transform.rotation);
     }
 }

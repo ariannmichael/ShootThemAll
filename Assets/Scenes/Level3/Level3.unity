@@ -1604,6 +1604,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 6972797015812726486, guid: 0cb1a4c215c2d47ccb6415de58fb9526, type: 3}
+      propertyPath: health
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6972797015812726486, guid: 0cb1a4c215c2d47ccb6415de58fb9526, type: 3}
+      propertyPath: _playerSo
+      value: 
+      objectReference: {fileID: 11400000, guid: 23004bf2238dc40fcbfee646339f26e4, type: 2}
+    - target: {fileID: 6972797015812726486, guid: 0cb1a4c215c2d47ccb6415de58fb9526, type: 3}
+      propertyPath: numOfHearts
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6972797015812726486, guid: 0cb1a4c215c2d47ccb6415de58fb9526, type: 3}
+      propertyPath: hearts.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6972797015812726486, guid: 0cb1a4c215c2d47ccb6415de58fb9526, type: 3}
+      propertyPath: hearts.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 5206224863231880043, guid: 0cb1a4c215c2d47ccb6415de58fb9526, type: 3}

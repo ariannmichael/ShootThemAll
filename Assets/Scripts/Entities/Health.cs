@@ -11,11 +11,31 @@ public class Health : MonoBehaviour
     public int health;
     public int numOfHearts;
 
+    [SerializeField] private PlayerSO _playerSo;
+
     public Image[] hearts;
 
     private void Awake()
     {
         instance = this;
+    }
+
+    private void Start()
+    {
+        health = _playerSo.Health;
+        numOfHearts = _playerSo.Health;
+
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            if (i < health)
+            {
+                hearts[i].enabled = true;
+            }
+            else
+            {
+                hearts[i].enabled = false;
+            }
+        }
     }
 
     private void Update()
@@ -29,6 +49,7 @@ public class Health : MonoBehaviour
         {
             hearts[numOfHearts - 1].enabled = false;
             numOfHearts -= 1;
+            _playerSo.Health = numOfHearts;
         }
         else
         {

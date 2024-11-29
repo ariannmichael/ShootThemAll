@@ -30,6 +30,8 @@ public class StartGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _playerSo.Health = 3;
+
         UIManager.instance.scoreValue.text = scoreSO.Value + "";
 
         if (scoreSO.Value >= 2000) {
@@ -40,7 +42,9 @@ public class StartGame : MonoBehaviour
             FlyingVDisabled.gameObject.SetActive(false);
         }
 
-        if (PlayerPrefs.HasKey("EVH") && PlayerPrefs.GetInt("EVH") == 1) {
+
+
+        if (_playerSo.Complete) {
             EVHDisabled.gameObject.SetActive(false);
         }
 
