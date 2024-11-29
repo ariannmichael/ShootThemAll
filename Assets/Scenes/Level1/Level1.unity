@@ -630,7 +630,7 @@ MonoBehaviour:
   musicSource: {fileID: 1920576015}
   SFXSource: {fileID: 518014098}
   background: {fileID: 8300000, guid: b6d90bcaf15484762aaccdcee3ef8602, type: 3}
-  death: {fileID: 0}
+  death: {fileID: 8300000, guid: ff128d78592c343d4b9731653323e311, type: 3}
   hurt: {fileID: 8300000, guid: a6035e9d9971743a799e5def6fc050be, type: 3}
   levelEnd: {fileID: 0}
 --- !u!1 &976053289

@@ -55,17 +55,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
         
-        // hurtSound.Play();
         _animator.SetTrigger("Hurt");
         LevelManager.instance.UpdatePlayerLife("damage");
-        
-        
-        // StartCoroutine(StopAnimation());
     }
-
-    // IEnumerator StopAnimation()
-    // {
-    //     yield return new WaitForSeconds(_invTime);
-    //     _renderer.color = Color.white;
-    // }
 }

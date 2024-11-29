@@ -5,8 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
+    private void Start() {
+        AudioManager.instance.PlaySFX(AudioManager.instance.death);
+    }
+
     public void Restart()
     {
-        SceneManager.LoadScene("Level0");
+        SceneManager.LoadScene(0);
     }
 }
