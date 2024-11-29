@@ -19,11 +19,11 @@ public class BulletSpawner : MonoBehaviour, IObserver
         timerComponent.RemoveObserver(this);
     }
 
-    public void Shoot()
+    public void Shoot(int spriteNumber)
     {
         if (!isSpawned)
         {
-            UpdateAttack(PlayerPrefs.GetInt("PlayerSkin"));   
+            UpdateAttack(spriteNumber);   
             isSpawned = true;
         }
     }
@@ -33,9 +33,9 @@ public class BulletSpawner : MonoBehaviour, IObserver
         isSpawned = false;
     }
 
-    public void UpdateAttack(int skin)
+    public void UpdateAttack(int spriteNumber)
     {
-        switch (skin)
+        switch (spriteNumber)
         {
             case 0:
                 Instantiate(bulletPrefab, transform.position, bulletPrefab.transform.rotation);
@@ -46,7 +46,7 @@ public class BulletSpawner : MonoBehaviour, IObserver
                 InstantiateBulletWithRotation(-15);
                 break;
             case 2:
-                timerComponent.timeDuration = 0.5f;
+                timerComponent.timeDuration = 0.3f;
                 Instantiate(bulletPrefab, transform.position, bulletPrefab.transform.rotation);
                 break;
             case 3:
@@ -63,7 +63,7 @@ public class BulletSpawner : MonoBehaviour, IObserver
 
     void InstantiateBiggerBullet()
     {
-        bulletPrefab.transform.localScale = new Vector3(2.2f, 2.2f, 2.2f);
+        bulletPrefab.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
         Instantiate(bulletPrefab, transform.position, bulletPrefab.transform.rotation, transform);
     }
 }

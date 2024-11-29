@@ -8,7 +8,6 @@ namespace Entities.Attack
 
         public void Shoot()
         {
-            BulletSpawner.Shoot();
         }
     }
 }

@@ -17,7 +17,7 @@ public class Pick : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = new Vector2(velocityX, 0);
+        rb.velocity = transform.up * velocityX * -1f;
     }
 
     private void OnTriggerEnter2D(Collider2D other)

@@ -19,6 +19,14 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private PlayerMovement _playerMovement;
 
+    private Dictionary<String, int> _playerSkins = new Dictionary<string, int>
+    {
+        {"Sg", 0},
+        {"Les Paul", 1},
+        {"FlyingV", 2},
+        {"EVH", 3}
+    };
+
     void Awake()
     {
         _animator = GetComponent<Animator>();
@@ -30,7 +38,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            BulletSpawner.Shoot();
+            BulletSpawner.Shoot(_playerSkins[_playerSo.Sprite.name]);
         }
     }
 

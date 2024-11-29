@@ -19,6 +19,14 @@ public class StartGame : MonoBehaviour
 
     public Button[] buttons;
 
+    private Dictionary<String, int> _playerSkins = new Dictionary<string, int>
+    {
+        {"Sg", 0},
+        {"Les Paul", 1},
+        {"FlyingV", 2},
+        {"EVH", 3}
+    };
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +44,7 @@ public class StartGame : MonoBehaviour
             EVHDisabled.gameObject.SetActive(false);
         }
 
-        buttons[_spriteIndex].interactable = false;
+        buttons[_playerSkins[_playerSo.Sprite.name]].interactable = false;
     }
 
     // Update is called once per frame
@@ -50,7 +58,6 @@ public class StartGame : MonoBehaviour
         buttons[_spriteIndex].interactable = true;
         _spriteIndex = index >= sprites.Length ? 0 : index;
         _playerSo.Sprite = sprites[_spriteIndex];
-        PlayerPrefs.SetInt("PlayerSkin", _spriteIndex);
         buttons[_spriteIndex].interactable = false;
     }
 
