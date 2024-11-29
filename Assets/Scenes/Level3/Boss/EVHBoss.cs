@@ -117,7 +117,7 @@ public class EVHBoss : Boss
 
     public void UpdateScore()
     {
-        LevelManager.instance.UpdateScore(5000);
+        LevelManager.instance.UpdateScore(7000);
         _playerSo.Complete = true;
     }
 

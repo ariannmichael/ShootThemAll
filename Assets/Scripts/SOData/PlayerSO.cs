@@ -31,4 +31,9 @@ public class PlayerSO : ScriptableObject
         get { return _complete; }
         set { _complete = value; }
     }
+
+    void OnEnable()
+    {
+        Complete = false;
+    }
 }
