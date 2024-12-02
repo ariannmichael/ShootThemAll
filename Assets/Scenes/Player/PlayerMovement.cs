@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] public float speed = 5f;
+    [SerializeField] public float speed = 5.6f;
     
     private float spriteOffsetX = 0.8f;
     private float spriteOffsetY = 0.5f;

@@ -163,8 +163,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 043490b98841c46868919e5015ed08f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 15
+  health: 17
   zAttackSpawner: {fileID: 8964169094829640645}
+  specialAttackTime: 20
 --- !u!95 &4937525016408426075
 Animator:
   serializedVersion: 5

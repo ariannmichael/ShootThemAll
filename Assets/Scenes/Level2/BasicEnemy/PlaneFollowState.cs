@@ -10,10 +10,10 @@ public class PlaneFollowState : BaseState<PlaneStateMachine.PlaneState>
     private Transform planeTransform;
     private Rigidbody2D rb;
     private bool hasToSwitch = false;
-    private float moveSpeed = 3f;
+    private float moveSpeed = 3.6f;
     private float maxMagnitude = 2f;
     private float switchMagnitude = 5f;
-    private float velocityX = -2f;
+    private float velocityX = -3f;
     
     public PlaneFollowState() : base(PlaneStateMachine.PlaneState.Follow)
     {

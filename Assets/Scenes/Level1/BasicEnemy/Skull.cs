@@ -11,7 +11,7 @@ public class Skull : Enemy
     public float minFrequency = 0.7f;
     public float maxFrequency = 1.3f;
     public float frequency;
-    private float velocityX = -2f;
+    private float velocityX = -4f;
     private float startY;
 
     [SerializeField] private float scoreValue = 1f;

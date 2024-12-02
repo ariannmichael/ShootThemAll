@@ -161,5 +161,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5575b19f4c48f4ada8117eaff97e909a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityX: 15
+  velocityX: 17
   childSpriteObject: {fileID: 6563325956628790291}

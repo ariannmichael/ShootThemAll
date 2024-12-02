@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60536d275c8f343739e04433cf03b83f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 12
+  health: 16
   _animator: {fileID: 1404899026199444657}
   slashAttackSpawner: {fileID: 2229100368371262768}
 --- !u!95 &1404899026199444657

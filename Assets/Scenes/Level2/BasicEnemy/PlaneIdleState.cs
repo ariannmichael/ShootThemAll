@@ -9,7 +9,7 @@ public class PlaneIdleState : BaseState<PlaneStateMachine.PlaneState>
     private float minFrequency = 1f;
     private float maxFrequency = 2f;
     private float frequency;
-    private float velocityX = -2f;
+    private float velocityX = -3.2f;
     private float startY;
     private float maxMagnitude = 5f;
     private float rotationSpeed = 5f; // Controls the rate of smoothing
